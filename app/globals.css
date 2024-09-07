@@ -14,6 +14,10 @@
   }
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -24,4 +28,17 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000; /* 스크롤바 트랙 색상 */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff; /* 스크롤바 색상 */
+  border: 1px solid #ffffff; /* 스크롤바 바깥쪽 테두리 */
 }
