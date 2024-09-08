@@ -42,7 +42,7 @@ export default function Header() {
           </li>
           <div className="w-[54px] h-[32px] border border-white rounded-full bg-[rgba(199,199,199,0.4)] cursor-pointer group relative">
             <div className="w-[24px] h-[24px] bg-[#000] bg-toggle bg-cover rounded-full relative top-[3px] left-[3px] group-hover:translate-x-2 transition-transform duration-300"></div>
-            <div className="w-fit px-4 py-1 absolute top-[40px] -left-[60px] text-[1.6rem] font-semibold border rounded-full bg-black whitespace-nowrap hidden group-hover:block">
+            <div className="w-fit px-4 py-1 absolute top-[40px] -left-[60px] text-[1.6rem] font-semibold border rounded-full bg-black whitespace-nowrap hidden group-hover:block z-10">
               비즈니스 ON
             </div>
           </div>

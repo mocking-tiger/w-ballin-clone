@@ -2,32 +2,39 @@ import DivContent from "./DivContent";
 
 export default function UpperDiv() {
   return (
-    <div className="w-full h-[600px] grid grid-cols-6 grid-rows-4">
+    <div className="aspect-[16/6] grid grid-cols-6 grid-rows-4">
       <div className="col-span-3">
-        <DivContent>Web All In</DivContent>
+        <DivContent bg="/div/WebAllin.webp" />
       </div>
       <div className="col-span-1 row-span-2">
-        <DivContent>23</DivContent>
+        <DivContent bg="/div/23_default.webp" />
       </div>
       <div className="col-span-2 row-span-4">
-        <DivContent>B</DivContent>
+        <DivContent bg="/div/B-logo_default.webp" />
       </div>
       <div className="col-span-3">
-        <DivContent>All in Package</DivContent>
+        <DivContent bg="/div/AllinPackage.webp" />
       </div>
       <div className="col-span-2 grid grid-cols-3">
-        <div className="">
-          <DivContent>Geek</DivContent>
+        <div className="relative group">
+          <DivContent bg="/div/Geek_default_L.webp" />
+          <video
+            className="w-full h-full absolute inset-0 group-hover:block hidden rounded-[1vw] object-cover"
+            src="/div/Geek_hover.webm"
+            autoPlay
+            loop
+            muted
+          />
         </div>
         <div className="col-span-2">
-          <DivContent>Magnificent</DivContent>
+          <DivContent bg="/div/magnificent.webp" />
         </div>
       </div>
       <div className="col-span-2 row-span-2">
-        <DivContent>Ballin</DivContent>
+        <DivContent bg="/div/Ballin_default.webp" />
       </div>
       <div className="col-span-2">
-        <DivContent>Mustard</DivContent>
+        <DivContent bg="/div/Mustard_default.webp" />
       </div>
     </div>
   );
