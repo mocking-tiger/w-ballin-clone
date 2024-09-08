@@ -49,13 +49,13 @@ export default function UpperDiv() {
         </div>
       </div>
       <div className="col-span-2 row-span-2 group relative">
-        <DivContent bg="/div/Ballin_default.webp" />
+        <DivContent bg="/div/Ballin_default.png" />
         <video
           className="w-full h-full absolute inset-0 group-hover:block hidden rounded-[1vw] object-cover"
           src="/div/Ballin_hover-L.webm"
           autoPlay
-          loop
           muted
+          onMouseEnter={(e) => (e.currentTarget.currentTime = 0)}
         />
       </div>
       <div className="col-span-2 group relative">

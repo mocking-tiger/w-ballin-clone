@@ -5,10 +5,12 @@ export default function Header() {
   return (
     <header className="w-full px-[68px] bg-black">
       <div className="flex items-center">
-        <Link className="p-[12px] flex flex-grow" href="/">
-          {/* <Image src="/logo.svg" width={155} height={42} alt="logo" /> */}
-          <div className="w-[155px] h-[42px] bg-[url('/logo.svg')] hover:bg-[url('/logo-color.svg')] transition-all duration-500"></div>
-        </Link>
+        <div className="p-[12px] flex-grow">
+          <Link className="w-[155px] block" href="/">
+            {/* <Image src="/logo.svg" width={155} height={42} alt="logo" /> */}
+            <div className="w-[155px] h-[42px] bg-[url('/logo.svg')] hover:bg-[url('/logo-color.svg')] transition-all duration-500"></div>
+          </Link>
+        </div>
         <ul className="pr-[30px] flex gap-20 text-white text-[2rem]">
           <li className="cursor-pointer hover:text-[#f2756b] relative group transition-colors duration-200">
             Design
