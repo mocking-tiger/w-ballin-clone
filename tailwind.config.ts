@@ -15,6 +15,12 @@ const config: Config = {
       backgroundImage: {
         toggle: "url(/menu-toggle.png)",
       },
+      backgroundSize: {
+        "100%": "100%",
+      },
+      backgroundPosition: {
+        right: "-11rem",
+      },
     },
   },
   plugins: [],
