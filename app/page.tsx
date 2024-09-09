@@ -1,3 +1,4 @@
+import MiddleDiv from "@/components/MiddleDiv";
 import UpperDiv from "@/components/UpperDiv";
 
 export default function Home() {
@@ -5,6 +6,7 @@ export default function Home() {
     <div className="w-full h-screen bg-black">
       <section>
         <UpperDiv />
+        <MiddleDiv />
       </section>
     </div>
   );
