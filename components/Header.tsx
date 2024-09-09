@@ -49,7 +49,7 @@ export default function Header() {
             </div>
           </div>
           <Image
-            className="cursor-pointer"
+            className="cursor-pointer lg:hidden"
             src="/header-menu.svg"
             width={40}
             height={40}
