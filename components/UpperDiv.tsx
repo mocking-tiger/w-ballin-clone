@@ -30,15 +30,17 @@ export default function UpperDiv() {
           hoverBg="/div/AllinPackage_hover.webp"
         />
       </div>
-      <div className="col-span-3 lg:col-span-2 grid grid-cols-3 relative group">
-        <DivContent bg="/div/Geek_default_L.webp" />
-        <video
-          className="w-full h-full absolute inset-0 group-hover:block hidden rounded-[1vw] object-fill"
-          src="/div/Geek_hover.webm"
-          autoPlay
-          loop
-          muted
-        />
+      <div className="col-span-3 lg:col-span-2 grid grid-cols-3">
+        <div className="relative group">
+          <DivContent bg="/div/Geek_default_L.webp" />
+          <video
+            className="w-full h-full absolute inset-0 group-hover:block hidden rounded-[1vw] object-fill"
+            src="/div/Geek_hover.webm"
+            autoPlay
+            loop
+            muted
+          />
+        </div>
         <div className="col-span-2">
           <DivContent
             bg="/div/magnificent.webp"

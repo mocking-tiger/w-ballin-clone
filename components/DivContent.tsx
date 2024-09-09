@@ -14,7 +14,7 @@ export default function DivContent({
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div
-      className="w-full h-full border-black border-2 rounded-[1vw] relative bg-center bg-cover bg-no-repeat"
+      className="w-full h-full border border-black rounded-[1vw] relative bg-center bg-cover bg-no-repeat"
       style={{
         backgroundImage: `url(${isHovered && hoverBg ? hoverBg : bg})`,
       }}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="그룹_205" width="32" height="32" viewBox="0 0 32 32">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#fff;stroke-linecap:round;stroke-width:2px}
+        </style>
+    </defs>
+    <path id="사각형_121" fill="none" d="M0 0H32V32H0z"/>
+    <g id="그룹_109" transform="translate(7 12)">
+        <path id="선_127" d="M0 0L18 0" class="cls-2"/>
+        <path id="선_129" d="M0 0L18 0" class="cls-2" transform="translate(0 8)"/>
+    </g>
+</svg>
