@@ -12,6 +12,7 @@ export default function DivContent({
   hoverBg?: string;
 }) {
   const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div
       className="w-full h-full border border-black rounded-[1vw] relative bg-cover bg-center bg-no-repeat"
