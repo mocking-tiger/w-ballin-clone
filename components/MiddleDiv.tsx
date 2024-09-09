@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import DivContent from "./DivContent";
-//cp
+
 export default function MiddleDiv() {
   const [screenWidth, setScreenWidth] = useState(0);
 
