@@ -5,7 +5,6 @@ export default function DivContent({
   children,
   bg = "none",
   hoverBg,
-  filter = false,
   contain = false,
   slide1 = false,
   slide2 = false,
@@ -13,7 +12,6 @@ export default function DivContent({
   children?: ReactNode;
   bg?: string;
   hoverBg?: string;
-  filter?: boolean;
   contain?: boolean;
   slide1?: boolean;
   slide2?: boolean;
@@ -49,7 +47,6 @@ export default function DivContent({
     if (divRef.current && !divRef.current.contains(event.target as Node)) {
       setThisModal(false);
     }
-    setThisModal(true);
   };
 
   useEffect(() => {
@@ -95,7 +92,7 @@ export default function DivContent({
             ? `/div/${hoverBg}`
             : `/div/${bg}`
         })`,
-        filter: filter ? (isHovered ? "none" : "grayscale(100%)") : "",
+        // filter: filter ? (isHovered ? "none" : "grayscale(100%)") : "",
       }}
       onClick={() => setThisModal(true)}
       onMouseEnter={() => setIsHovered((prev) => !prev)}

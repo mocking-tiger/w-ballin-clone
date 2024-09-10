@@ -7,7 +7,7 @@ export default function UnderDiv() {
         <DivContent bg="weballin-logo_default_m.png" slide1 />
       </div>
       <div className="col-span-3 row-span-3 order-1 lg:order-none">
-        <DivContent bg="gangnam_hover_L@2x.webp" filter />
+        <DivContent hoverBg="gangnam_hover_L@2x.webp" bg="gangnam_L@2x.png" />
       </div>
       <div className="col-span-2 row-span-3 order-1 lg:order-none">
         <DivContent bg="client_default_L.webp" slide2 />
