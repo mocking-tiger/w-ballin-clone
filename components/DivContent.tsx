@@ -1,6 +1,5 @@
 "use client";
-
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 
 export default function DivContent({
   children,
@@ -19,7 +18,9 @@ export default function DivContent({
   slide1?: boolean;
   slide2?: boolean;
 }) {
+  const divRef = useRef<HTMLDivElement | null>(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [thisModal, setThisModal] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides1 = [
@@ -44,6 +45,12 @@ export default function DivContent({
     "slide2-7.png",
   ];
 
+  const closeModal = (event: MouseEvent) => {
+    if (divRef.current && !divRef.current.contains(event.target as Node)) {
+      setThisModal(false);
+    }
+  };
+
   useEffect(() => {
     let slideInterval = null;
 
@@ -64,8 +71,16 @@ export default function DivContent({
     // eslint-disable-next-line
   }, [isHovered, slide1, slide2]);
 
+  useEffect(() => {
+    document.addEventListener("click", closeModal);
+    return () => {
+      document.removeEventListener("click", closeModal);
+    };
+  }, []);
+
   return (
     <div
+      ref={divRef}
       className={`w-full h-full border border-black rounded-[1vw] relative bg-center bg-no-repeat ${
         contain ? "bg-contain" : "bg-cover"
       }`}
@@ -81,10 +96,18 @@ export default function DivContent({
         })`,
         filter: filter ? (isHovered ? "none" : "grayscale(100%)") : "",
       }}
+      onClick={() => setThisModal((prev) => !prev)}
       onMouseEnter={() => setIsHovered((prev) => !prev)}
       onMouseLeave={() => setIsHovered((prev) => !prev)}
     >
       {children}
+      <div
+        className={`w-[500px] h-[500px] fixed z-20 left-20 bottom-20 bg-black text-white ${
+          thisModal ? "block" : "hidden"
+        }`}
+      >
+        {`${bg}`}
+      </div>
     </div>
   );
 }
