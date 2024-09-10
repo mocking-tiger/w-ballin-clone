@@ -49,6 +49,7 @@ export default function DivContent({
     if (divRef.current && !divRef.current.contains(event.target as Node)) {
       setThisModal(false);
     }
+    setThisModal(true);
   };
 
   useEffect(() => {
@@ -96,7 +97,7 @@ export default function DivContent({
         })`,
         filter: filter ? (isHovered ? "none" : "grayscale(100%)") : "",
       }}
-      onClick={() => setThisModal((prev) => !prev)}
+      onClick={() => setThisModal(true)}
       onMouseEnter={() => setIsHovered((prev) => !prev)}
       onMouseLeave={() => setIsHovered((prev) => !prev)}
     >
