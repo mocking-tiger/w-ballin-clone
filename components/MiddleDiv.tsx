@@ -99,7 +99,7 @@ export default function MiddleDiv() {
       </div>
       <div className="col-span-2 lg:col-span-1 row-span-2 lg:row-span-1">
         <DivContent
-          bg="20151015_default_L.webp"
+          bg="20151015_default_L.png"
           hoverBg="20151015_hover_L.webp"
         />
       </div>

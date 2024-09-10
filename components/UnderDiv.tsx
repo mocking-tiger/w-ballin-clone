@@ -14,7 +14,7 @@ export default function UnderDiv() {
       </div>
       <div className="col-span-1 row-span-1 order-1 lg:order-none">
         <DivContent
-          bg="20180628_default_L.webp"
+          bg="20180628_default_L.png"
           hoverBg="20180628_hover_L.webp"
         />
       </div>
