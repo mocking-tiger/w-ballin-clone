@@ -79,7 +79,6 @@ export default function DivContent({
 
     return () => {
       if (slideInterval) {
-        console.log("인터벌 정리 되는지 확인");
         clearInterval(slideInterval);
       }
     };
