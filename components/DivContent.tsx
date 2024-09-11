@@ -8,6 +8,9 @@ export default function DivContent({
   contain = false,
   slide1 = false,
   slide2 = false,
+  img,
+  description = "",
+  video,
 }: {
   children?: ReactNode;
   bg?: string;
@@ -15,6 +18,9 @@ export default function DivContent({
   contain?: boolean;
   slide1?: boolean;
   slide2?: boolean;
+  img?: string;
+  description?: string;
+  video?: string;
 }) {
   const divRef = useRef<HTMLDivElement | null>(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -100,11 +106,40 @@ export default function DivContent({
     >
       {children}
       <div
-        className={`w-[500px] h-[500px] fixed z-20 left-20 bottom-20 bg-black text-white ${
-          thisModal ? "block" : "hidden"
+        className={`w-[400px] lg:w-auto max-w-[800px] h-auto max-h-[732px] p-[16px] lg:p-[40px] fixed z-20 left-16 bottom-16 border-2 bg-black text-white rounded-[1vw] ${
+          description && thisModal ? "block" : "hidden"
         }`}
       >
-        {`${bg}`}
+        <div className="w-full lg:w-[712px] h-auto max-h-[574px] mb-[16px] lg:mb-[40px] border-2 rounded-[1vw] overflow-hidden relative">
+          {img && (
+            // eslint-disable-next-line
+            <img
+              src={`/div/${img}`}
+              style={{ width: "auto", height: "auto" }}
+              alt="popup-image"
+            />
+          )}
+          {video && (
+            <video
+              src={`/div/${video}`}
+              autoPlay
+              loop
+              className="w-full h-auto object-cover"
+            />
+          )}
+        </div>
+        <p className="text-[2rem] lg:text-[2.4rem] tracking-tighter">
+          {description}
+        </p>
+        <div
+          className="px-[18px] py-[8px] absolute left-0 -top-28 bg-black border-2 rounded-[1vw] cursor-pointer underline text-[2rem]"
+          onClick={(e) => {
+            e.stopPropagation();
+            setThisModal((prev) => !prev);
+          }}
+        >
+          Click anywhere to Close
+        </div>
       </div>
     </div>
   );
