@@ -11,6 +11,7 @@ export default function DivContent({
   img,
   description = "",
   video,
+  info = false,
 }: {
   children?: ReactNode;
   bg?: string;
@@ -21,11 +22,13 @@ export default function DivContent({
   img?: string;
   description?: string;
   video?: string;
+  info?: boolean;
 }) {
   const divRef = useRef<HTMLDivElement | null>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [thisModal, setThisModal] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [backgroundIMG, setBackgroundIMG] = useState("loading.png");
 
   const slides1 = [
     "slide0.png",
@@ -52,6 +55,14 @@ export default function DivContent({
   const closeModal = (event: MouseEvent) => {
     if (divRef.current && !divRef.current.contains(event.target as Node)) {
       setThisModal(false);
+    }
+  };
+
+  const handleBackground = () => {
+    if (backgroundIMG === bg) {
+      setBackgroundIMG(hoverBg as string);
+    } else {
+      setBackgroundIMG(bg);
     }
   };
 
@@ -82,6 +93,10 @@ export default function DivContent({
     };
   }, []);
 
+  useEffect(() => {
+    setBackgroundIMG(bg);
+  }, [bg]);
+
   return (
     <div
       ref={divRef}
@@ -96,11 +111,10 @@ export default function DivContent({
             ? `/div/${slides2[currentSlide]}`
             : isHovered && hoverBg
             ? `/div/${hoverBg}`
-            : `/div/${bg}`
+            : `/div/${backgroundIMG}`
         })`,
-        // filter: filter ? (isHovered ? "none" : "grayscale(100%)") : "",
       }}
-      onClick={() => setThisModal(true)}
+      onClick={() => (info ? handleBackground() : setThisModal(true))}
       onMouseEnter={() => setIsHovered((prev) => !prev)}
       onMouseLeave={() => setIsHovered((prev) => !prev)}
     >
@@ -110,7 +124,11 @@ export default function DivContent({
           description && thisModal ? "block" : "hidden"
         }`}
       >
-        <div className="w-full lg:w-[712px] h-auto max-h-[574px] mb-[16px] lg:mb-[40px] border-2 rounded-[1vw] overflow-hidden relative">
+        <div
+          className={`w-full lg:w-[712px] h-auto max-h-[574px] mb-[16px] lg:mb-[40px] border-2 rounded-[1vw] overflow-hidden relative ${
+            img || video ? "" : "hidden"
+          }`}
+        >
           {img && (
             // eslint-disable-next-line
             <img

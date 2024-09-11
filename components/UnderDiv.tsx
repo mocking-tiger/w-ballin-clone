@@ -7,7 +7,11 @@ export default function UnderDiv() {
         <DivContent bg="weballin-logo_default_m.png" slide1 />
       </div>
       <div className="col-span-3 row-span-3 order-1 lg:order-none">
-        <DivContent hoverBg="gangnam_hover_L@2x.webp" bg="gangnam_L@2x.png" />
+        <DivContent
+          hoverBg="gangnam_hover_L@2x.webp"
+          bg="gangnam_L@2x.png"
+          description="47, Myeonmokcheon-ro 19-gil, Jungnang-gu, Seoul, Republic of Korea"
+        />
       </div>
       <div className="col-span-2 row-span-3 order-1 lg:order-none">
         <DivContent bg="client_default_L.webp" slide2 />
@@ -22,7 +26,11 @@ export default function UnderDiv() {
         <DivContent bg="t1.png" hoverBg="t2.png" contain />
       </div>
       <div className="col-span-5 row-span-1 order-0 lg:order-none">
-        <DivContent bg="email_default_L.webp" hoverBg="email_hover_L@2x.png" />
+        <DivContent
+          bg="email_default_L.webp"
+          hoverBg="email_hover_L@2x.png"
+          info
+        />
       </div>
       <div className="col-span-1 row-span-1 order-0 lg:order-none">
         <DivContent
@@ -34,7 +42,11 @@ export default function UnderDiv() {
         <DivContent bg="Lucky_default_L.webp" hoverBg="Lucky_hover_L.webp" />
       </div>
       <div className="col-span-5 row-span-1 order-0 lg:order-none">
-        <DivContent bg="phone_default_L.webp" hoverBg="phone_hover_L@2x.png" />
+        <DivContent
+          bg="phone_default_L.webp"
+          hoverBg="phone_hover_L@2x.png"
+          info
+        />
       </div>
       <div className="col-span-1 row-span-1 order-2 lg:order-none">
         <DivContent bg="ceo_default_L.webp" hoverBg="ceo-hover.png" />
