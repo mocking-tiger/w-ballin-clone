@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import MiddleDiv from "@/components/MiddleDiv";
 import UnderDiv from "@/components/UnderDiv";
 import UpperDiv from "@/components/UpperDiv";
@@ -10,6 +11,7 @@ export default function Home() {
         <MiddleDiv />
         <UnderDiv />
       </section>
+      <Footer />
     </div>
   );
 }

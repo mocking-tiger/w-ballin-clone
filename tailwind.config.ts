@@ -14,6 +14,7 @@ const config: Config = {
       },
       backgroundImage: {
         toggle: "url(/menu-toggle.png)",
+        toggleBusiness: "url(/menu-toggle@2x.png)",
       },
       backgroundSize: {
         "100%": "100%",

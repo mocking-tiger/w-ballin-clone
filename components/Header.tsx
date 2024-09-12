@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 
 export default function Header() {
+  const page = usePathname();
+  const router = useRouter();
   const [isClick, setIsClick] = useState(false);
 
   return (
@@ -51,10 +54,19 @@ export default function Header() {
             className={`w-[46px] md:w-[54px] h-[26px] md:h-[32px] border border-white rounded-full bg-[rgba(199,199,199,0.4)] cursor-pointer group relative ${
               isClick ? "hidden" : ""
             }`}
+            onClick={() => {
+              page === "/business"
+                ? router.push("/")
+                : router.push("/business");
+            }}
           >
-            <div className="w-[20px] md:w-[24px] h-[20px] md:h-[24px] bg-[#000] bg-toggle bg-cover rounded-full relative top-[3px] left-[3px] lg:group-hover:translate-x-2 transition-transform duration-300"></div>
+            {page === "/" ? (
+              <div className="w-[20px] md:w-[24px] h-[20px] md:h-[24px] bg-[#000] bg-toggle bg-cover rounded-full relative top-[3px] left-[3px] lg:group-hover:translate-x-2 transition-transform duration-300"></div>
+            ) : (
+              <div className="w-[20px] md:w-[24px] h-[20px] md:h-[24px] bg-[#fff] bg-toggleBusiness bg-cover rounded-full absolute top-[3px] right-1 lg:group-hover:-translate-x-2 transition-transform duration-300"></div>
+            )}
             <div className="w-fit px-4 py-1 absolute top-[40px] -left-[60px] text-[1.6rem] font-semibold border rounded-full bg-black whitespace-nowrap hidden lg:group-hover:block z-10">
-              비즈니스 ON
+              {page === "/business" ? "캐쥬얼 ON" : "비즈니스 ON"}
             </div>
           </div>
           <Image
@@ -70,12 +82,19 @@ export default function Header() {
       {isClick && (
         <div className="w-full h-screen mt-[54px] lg:mt-[66px] px-[46px] text-white fixed inset-0 bg-black z-50 flex flex-col gap-[30px] lg:hidden">
           <div
-            className={`w-[54px] h-[32px] mt-[10px] border border-white rounded-full bg-[rgba(199,199,199,0.4)] cursor-pointer group relative`}
+            className={`w-[54px] h-[32px] mt-[10px] border border-white rounded-full bg-[rgba(199,199,199,0.4)] cursor-pointer relative`}
+            onClick={() => {
+              page === "/business"
+                ? router.push("/")
+                : router.push("/business");
+              setIsClick(false);
+            }}
           >
-            <div className="w-[24px] h-[24px] bg-[#000] bg-toggle bg-cover rounded-full relative top-[3px] left-[3px] lg:group-hover:translate-x-2 transition-transform duration-300"></div>
-            <div className="w-fit px-4 py-1 absolute top-[40px] -left-[60px] text-[1.6rem] font-semibold border rounded-full bg-black whitespace-nowrap hidden lg:group-hover:block z-10">
-              비즈니스 ON
-            </div>
+            {page === "/" ? (
+              <div className="w-[20px] md:w-[24px] h-[20px] md:h-[24px] bg-[#000] bg-toggle bg-cover rounded-full relative top-[3px] left-[3px] lg:group-hover:translate-x-2 transition-transform duration-300"></div>
+            ) : (
+              <div className="w-[20px] md:w-[24px] h-[20px] md:h-[24px] bg-[#fff] bg-toggleBusiness bg-cover rounded-full absolute top-[3px] right-1 lg:group-hover:-translate-x-2 transition-transform duration-300"></div>
+            )}{" "}
           </div>
           <div className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer">
             <span>Design</span>
