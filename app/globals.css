@@ -37,6 +37,26 @@ body {
   }
 }
 
+.underline-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 1px;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.underline-animation:hover::after {
+  width: 100%;
+}
+
 ::-webkit-scrollbar {
   width: 2px;
 }

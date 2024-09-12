@@ -15,10 +15,18 @@ export default function NavBusiness({
 
   return (
     <ul className="pr-[30px] flex gap-5 lg:gap-20 items-center text-white text-[2rem] font-[SpoqaHanSansNeo-Regular]">
-      <li className="cursor-pointer hidden lg:block">클라이언트</li>
-      <li className="cursor-pointer hidden lg:block">서비스</li>
-      <li className="cursor-pointer hidden lg:block">연혁</li>
-      <li className="-mr-10 cursor-pointer hidden lg:block">문의하기</li>
+      <li className="cursor-pointer hidden lg:block underline-animation">
+        클라이언트
+      </li>
+      <li className="cursor-pointer hidden lg:block underline-animation">
+        서비스
+      </li>
+      <li className="cursor-pointer hidden lg:block underline-animation">
+        연혁
+      </li>
+      <li className="-mr-10 cursor-pointer hidden lg:block underline-animation">
+        문의하기
+      </li>
       <li className="underline text-gray-300 items-center gap-10 cursor-pointer hidden lg:flex">
         <div className="w-[6px] h-[6px] bg-gray-500 rounded-full"></div>
         {"KR"}
