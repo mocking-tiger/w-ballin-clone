@@ -25,6 +25,7 @@ const config: Config = {
       backgroundPosition: {
         fix: "0px",
         businessRight: "-450px",
+        company: "0 -15px",
       },
       animation: {
         slideIn: "slideIn 0.7s ease",
