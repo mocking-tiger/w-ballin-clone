@@ -30,7 +30,7 @@ export default function Business() {
           <h3 className="w-fit px-3 py-1 text-[1.6rem] border border-black rounded-xl">
             Clients
           </h3>
-          <div className="my-[12px] lg:my-[32px] grid grid-cols-3 md:grid-cols-4 gap-y-10">
+          <div className="my-[12px] lg:my-[32px] grid grid-cols-3 md:grid-cols-4 lg:gap-y-14">
             <CompanyBlock />
             <CompanyBlock />
             <CompanyBlock />
