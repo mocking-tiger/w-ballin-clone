@@ -72,13 +72,53 @@ body {
   width: 0;
   height: 2px;
   bottom: 0px;
-  left: 0;
+  left: -1px;
   background-color: #0b2d5f;
   transition: width 0.3s ease;
 }
 
 .underline-animation2:hover::after {
-  width: 100%;
+  width: 111%;
+}
+
+.underline-animation3 {
+  position: relative;
+  overflow: hidden;
+}
+
+.underline-animation3::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0px;
+  left: -1px;
+  background-color: #063823;
+  transition: width 0.3s ease;
+}
+
+.underline-animation3:hover::after {
+  width: 111%;
+}
+
+.underline-animation4 {
+  position: relative;
+  overflow: hidden;
+}
+
+.underline-animation4::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0px;
+  left: -1px;
+  background-color: #4c0808;
+  transition: width 0.3s ease;
+}
+
+.underline-animation4:hover::after {
+  width: 111%;
 }
 
 ::-webkit-scrollbar {

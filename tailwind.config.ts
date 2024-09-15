@@ -19,6 +19,8 @@ const config: Config = {
         businessShadow:
           "linear-gradient(95deg, #080808 -19%, rgba(8, 8, 8, 0) 93%);",
         businessDesign: "linear-gradient(to bottom, #071e41, #11448d);",
+        businessDev: "linear-gradient(to bottom, #032718 22%, #0d603d);",
+        businessMarketing: "linear-gradient(to bottom, #2f0605, #6f0b0b);",
       },
       backgroundSize: {
         "100%": "100%",

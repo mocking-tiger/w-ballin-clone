@@ -1,5 +1,5 @@
+import DDMBlock from "@/components/DDMBlock";
 import PartnersAndClients from "@/components/Parteners&Clients";
-import Image from "next/image";
 
 export default function Business() {
   return (
@@ -18,46 +18,56 @@ export default function Business() {
         <PartnersAndClients />
       </article>
       <article className="py-[80px] bg-black">
-        <div className="w-[960px] mx-auto p-[32px] bg-businessDesign rounded-lg relative">
-          <Image
-            className="mb-[18px]"
-            src="/business/design-logo.webp"
-            width={81}
-            height={26}
-            alt="design-logo"
-          />
-          <p className="mb-[32px] text-[2.2rem] text-white font-bold">
-            UI/UX 디자인 전문가로 이루어진 팀으로부터
-            <br /> 트랜디한 디자인을 받아 보실 수 있습니다.
-          </p>
-          <span className="mb-[18px] block text-[2rem] text-white opacity-35">
-            주요기술
-          </span>
-          <div className="flex gap-8">
-            <div className="w-[64px] h-[64px] bg-[url('/business/ps-icon.webp')] rounded-full" />
-            <div className="w-[64px] h-[64px] bg-[url('/business/ai-icon.webp')] rounded-full" />
-            <div className="w-[64px] h-[64px] bg-[url('/business/ae-icon.webp')] rounded-full" />
-            <div className="w-[64px] h-[64px] bg-[url('/business/id-icon.webp')] rounded-full" />
-            <div className="w-[64px] h-[64px] bg-[url('/business/xd-icon.webp')] rounded-full" />
-            <div className="w-[64px] h-[64px] bg-[url('/business/zeplin-icon.webp')] rounded-full" />
-            <div className="w-[64px] h-[64px] bg-[url('/business/protopie-icon.webp')] rounded-full" />
-          </div>
-          <a
-            href="#"
-            className="text-[2rem] text-white absolute right-16 top-[35%] group"
-          >
-            <span className="underline underline-animation2 underline-offset-4">
-              바로가기
-            </span>
-            <Image
-              className="ml-3 inline group-hover:-translate-y-2 transition-all duration-300"
-              src="/business/arrow-top-right.png"
-              width={14}
-              height={14}
-              alt="arrow-icon"
-            />
-          </a>
-        </div>
+        <DDMBlock
+          bg="bg-businessDesign"
+          logo="/business/design-logo.webp"
+          description="UI/UX 디자인 전문가로 이루어진 팀으로부터
+트랜디한 디자인을 받아 보실 수 있습니다."
+          icons={[
+            "bg-[url('/business/ps-icon.webp')]",
+            "bg-[url('/business/ai-icon.webp')]",
+            "bg-[url('/business/ae-icon.webp')]",
+            "bg-[url('/business/id-icon.webp')]",
+            "bg-[url('/business/xd-icon.webp')]",
+            "bg-[url('/business/zeplin-icon.webp')]",
+            "bg-[url('/business/protopie-icon.webp')]",
+          ]}
+        />
+        <DDMBlock
+          bg="bg-businessDev"
+          logo="/business/dev-logo.webp"
+          description="원하시는 모든 분기의 반응형 웹, 다양한 효과를 가진 사이트
+           등 상상하셨던 홈페이지를 현실로 만들어드립니다."
+          icons={[
+            "bg-[url('/business/html5-icon.webp')]",
+            "bg-[url('/business/css3-icon.webp')]",
+            "bg-[url('/business/js-icon.webp')]",
+            "bg-[url('/business/php-icon.webp')]",
+            "bg-[url('/business/nodejs-icon.webp')]",
+            "bg-[url('/business/vue-icon.webp')]",
+            "bg-[url('/business/sequelize-icon.webp')]",
+            "bg-[url('/business/mysql-icon.webp')]",
+            "bg-[url('/business/aws-icon.webp')]",
+            "bg-[url('/business/centos-icon.webp')]",
+            "bg-[url('/business/linux-icon.webp')]",
+          ]}
+        />
+        <DDMBlock
+          bg="bg-businessMarketing"
+          logo="/business/mkt-logo.webp"
+          description="SEO, SEM, 광고관리 등을 다양한 내/외부 솔루션을 통해
+성과를 극대화하고, 철저하게 분석, 관리, 컨설팅 해드립니다."
+          icons={[
+            "bg-[url('/business/ads-icon.webp')]",
+            "bg-[url('/business/analytics-icon.webp')]",
+            "bg-[url('/business/tag-icon.webp')]",
+            "bg-[url('/business/data-icon.webp')]",
+            "bg-[url('/business/google-icon.webp')]",
+            "bg-[url('/business/optimize-icon.webp')]",
+            "bg-[url('/business/naver-icon.webp')]",
+            "bg-[url('/business/kakao-icon.webp')]",
+          ]}
+        />
       </article>
     </section>
   );
