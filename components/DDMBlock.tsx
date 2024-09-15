@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 export default function DDMBlock({
   bg,
@@ -11,9 +14,50 @@ export default function DDMBlock({
   description: string;
   icons: string[];
 }) {
+  const blockRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [fadeInIcons, setFadeInIcons] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    if (blockRef.current) {
+      observer.observe(blockRef.current);
+    }
+
+    return () => {
+      const refCurrent = blockRef;
+      if (refCurrent.current) observer.unobserve(refCurrent.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      const timer = setTimeout(() => {
+        setFadeInIcons(true);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [isVisible]);
+
   return (
     <div
-      className={`w-[960px] mx-auto mb-[24px] p-[32px] ${bg} rounded-lg relative`}
+      ref={blockRef}
+      className={`w-[960px] mx-auto mb-[24px] p-[32px] rounded-lg relative ${bg} ${
+        isVisible ? "animate-slideIn" : "opacity-0"
+      }`}
     >
       <Image
         className="mb-[18px]"
@@ -42,7 +86,10 @@ export default function DDMBlock({
         {icons.map((icon, index) => (
           <div
             key={index}
-            className={`w-[64px] h-[64px] ${icon} rounded-full`}
+            className={`w-[64px] h-[64px] rounded-full transition-opacity duration-500 ease-in ${icon} ${
+              fadeInIcons ? `opacity-100` : `opacity-0`
+            }`}
+            style={{ transitionDelay: `${index * 100}ms` }}
           />
         ))}
       </div>

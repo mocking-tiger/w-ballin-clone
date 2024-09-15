@@ -29,7 +29,7 @@ export default function CompanyBlock() {
       const refCurrent = blockRef;
       if (refCurrent.current) observer.unobserve(refCurrent.current);
     };
-  });
+  }, []);
 
   return (
     <div
