@@ -18,6 +18,7 @@ const config: Config = {
         business1: "url(/business/banner-l.webp)",
         businessShadow:
           "linear-gradient(95deg, #080808 -19%, rgba(8, 8, 8, 0) 93%);",
+        businessDesign: "linear-gradient(to bottom, #071e41, #11448d);",
       },
       backgroundSize: {
         "100%": "100%",

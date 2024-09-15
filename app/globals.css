@@ -61,6 +61,26 @@ body {
   width: 100%;
 }
 
+.underline-animation2 {
+  position: relative;
+  overflow: hidden;
+}
+
+.underline-animation2::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0px;
+  left: 0;
+  background-color: #0b2d5f;
+  transition: width 0.3s ease;
+}
+
+.underline-animation2:hover::after {
+  width: 100%;
+}
+
 ::-webkit-scrollbar {
   width: 2px;
 }
