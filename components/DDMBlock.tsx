@@ -55,7 +55,7 @@ export default function DDMBlock({
   return (
     <div
       ref={blockRef}
-      className={`w-[960px] mx-auto mb-[24px] p-[32px] rounded-lg relative ${bg} ${
+      className={`w-[90%] lg:w-[960px] mx-auto mb-[24px] p-[32px] rounded-lg relative ${bg} ${
         isVisible ? "animate-slideIn" : "opacity-0"
       }`}
     >
@@ -71,23 +71,33 @@ export default function DDMBlock({
       <p
         className={`${
           bg === "bg-businessDesign"
-            ? "lg:w-[420px]"
+            ? "w-full md:w-[290px] lg:w-[420px]"
             : bg === "bg-businessDev"
-            ? "lg:w-[550px]"
-            : "lg:w-[530px]"
-        } mb-[32px] text-[2.2rem] text-white font-bold`}
+            ? "w-full md:w-[390px] lg:w-[550px]"
+            : "w-full md:w-[360px] lg:w-[530px]"
+        } mb-[32px] text-[1.5rem] lg:text-[2.2rem] text-white font-bold text-wrap`}
       >
         {description}
       </p>
+      <a href="#" className="mb-7 block text-[2rem] text-white md:hidden">
+        <span className="underline text-[1.8rem]">바로가기</span>
+        <Image
+          className="ml-3 inline group-hover:-translate-y-2 transition-all duration-300"
+          src="/business/arrow-top-right.png"
+          width={14}
+          height={14}
+          alt="arrow-icon"
+        />
+      </a>
       <span className="mb-[18px] block text-[2rem] text-white opacity-35">
         주요기술
       </span>
-      <div className="flex gap-8">
+      <div className="flex gap-8 flex-wrap">
         {icons.map((icon, index) => (
           <div
             key={index}
-            className={`w-[64px] h-[64px] rounded-full transition-opacity duration-500 ease-in ${icon} ${
-              fadeInIcons ? `opacity-100` : `opacity-0`
+            className={`w-[52px] lg:w-[64px] h-[52px] lg:h-[64px] bg-center rounded-full transition-opacity duration-500 ease-in ${icon} ${
+              fadeInIcons ? `lg:opacity-100` : `lg:opacity-0`
             }`}
             style={{ transitionDelay: `${index * 100}ms` }}
           />
@@ -95,7 +105,7 @@ export default function DDMBlock({
       </div>
       <a
         href="#"
-        className="text-[2rem] text-white absolute right-16 top-[35%] group"
+        className="text-[2rem] text-white hidden md:block absolute right-16 top-[35%] group"
       >
         <span
           className={`underline  underline-offset-4 ${
