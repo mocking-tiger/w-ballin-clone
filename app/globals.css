@@ -121,6 +121,28 @@ body {
   width: 111%;
 }
 
+.history-circle {
+  position: relative;
+}
+
+.history-circle:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 70px; /* 점선 길이 */
+  height: 1px;
+  border-top: 1px dashed black; /* 점선 스타일 */
+  border-bottom: 1px dashed black; /* 점선 스타일 */
+  transform: translateY(-50%);
+}
+
+@media (max-width: 1023px) {
+  .history-circle:not(:last-child)::before {
+    width: 150px; /* 더 큰 화면에서는 점선 길이 증가 */
+  }
+}
+
 ::-webkit-scrollbar {
   width: 2px;
 }

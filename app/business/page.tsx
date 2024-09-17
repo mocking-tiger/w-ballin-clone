@@ -1,4 +1,5 @@
 import DDMBlock from "@/components/DDMBlock";
+import HistoryCircle from "@/components/HistoryCircle";
 import PartnersAndClients from "@/components/Parteners&Clients";
 
 export default function Business() {
@@ -68,6 +69,31 @@ export default function Business() {
             "bg-[url('/business/kakao-icon.webp')]",
           ]}
         />
+      </article>
+      <article>
+        <div className="w-[95%] lg:w-[960px] mx-auto py-[50px] lg:py-[120px]">
+          <h2 className="mb-[20px] lg:mb-[50px] text-[2.2rem] lg:text-[4rem] font-bold">
+            HISTORY
+          </h2>
+          <div className="flex flex-wrap lg:gap-24 justify-between lg:justify-center overflow-hidden">
+            <HistoryCircle
+              year="2012"
+              innerCircle="회사 설립"
+              square="JYP Network"
+            />
+            <HistoryCircle
+              year="2014"
+              innerCircle="R&D Center 확장"
+              square="청담 센터"
+            />
+            <HistoryCircle
+              year="2018"
+              innerCircle="컨퍼런스 주최"
+              square="With"
+            />
+            <HistoryCircle year="2021" innerCircle="상호 변경" square="" />
+          </div>
+        </div>
       </article>
     </section>
   );
