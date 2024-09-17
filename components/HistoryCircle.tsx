@@ -16,8 +16,11 @@ export default function HistoryCircle({
 }) {
   const blockRef = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [width, setWidth] = useState<number>(0);
 
   useEffect(() => {
+    const screenWidth = window.innerWidth;
+    setWidth(screenWidth);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -49,7 +52,7 @@ export default function HistoryCircle({
         isVisible ? "animate-slideIn lg:animate-slideInRight" : ""
       }`}
       style={{
-        animationDelay: window.innerWidth > 1023 ? `${index * 100}ms` : "",
+        animationDelay: width > 1023 ? `${index * 100}ms` : "",
       }}
     >
       <p className="w-fit mx-auto text-[1.4rem] lg:text-[1.8rem] font-bold">
