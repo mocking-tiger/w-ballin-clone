@@ -80,18 +80,26 @@ export default function Business() {
               year="2012"
               innerCircle="회사 설립"
               square="JYP Network"
+              index={3}
             />
             <HistoryCircle
               year="2014"
               innerCircle="R&D Center 확장"
               square="청담 센터"
+              index={2}
             />
             <HistoryCircle
               year="2018"
               innerCircle="컨퍼런스 주최"
               square="With"
+              index={1}
             />
-            <HistoryCircle year="2021" innerCircle="상호 변경" square="" />
+            <HistoryCircle
+              year="2021"
+              innerCircle="상호 변경"
+              square=""
+              index={0}
+            />
           </div>
         </div>
       </article>

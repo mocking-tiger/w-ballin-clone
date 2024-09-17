@@ -1,16 +1,57 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 export default function HistoryCircle({
   year,
   innerCircle,
   square,
+  index,
 }: {
   year: string;
   innerCircle: string;
   square: string;
+  index: number;
 }) {
+  const blockRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    if (blockRef.current) {
+      observer.observe(blockRef.current);
+    }
+
+    return () => {
+      const refCurrent = blockRef;
+      if (refCurrent.current) observer.unobserve(refCurrent.current);
+    };
+  }, []);
+
   return (
-    <div className="w-[152px] lg:w-[192px] h-aut history-circle">
+    <div
+      ref={blockRef}
+      className={`w-[152px] lg:w-[192px] h-aut history-circle opacity-0 ${
+        isVisible ? "animate-slideIn lg:animate-slideInRight" : ""
+      }`}
+      style={{
+        animationDelay: window.innerWidth > 1023 ? `${index * 100}ms` : "",
+      }}
+    >
       <p className="w-fit mx-auto text-[1.4rem] lg:text-[1.8rem] font-bold">
         {year}
       </p>
