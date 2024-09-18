@@ -33,6 +33,7 @@ const config: Config = {
       animation: {
         slideIn: "slideIn 0.7s ease forwards",
         slideInRight: "slideInRight 0.7s ease forwards",
+        slideInLeft: "slideInLeft 0.7s ease forwards",
         fadeIn: "fadeIn 0.7s linear 0.7s forwards",
       },
       keyframes: {
@@ -49,6 +50,16 @@ const config: Config = {
         slideInRight: {
           from: {
             transform: "translateX(130%)",
+            opacity: "0%",
+          },
+          to: {
+            transform: "translateX(0)",
+            opacity: "100%",
+          },
+        },
+        slideInLeft: {
+          from: {
+            transform: "translateX(-30%)",
             opacity: "0%",
           },
           to: {

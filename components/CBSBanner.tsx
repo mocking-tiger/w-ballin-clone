@@ -1,4 +1,36 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 export default function CBSBanner({ title }: { title: string }) {
+  const blockRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.4,
+      }
+    );
+
+    if (blockRef.current) {
+      observer.observe(blockRef.current);
+    }
+
+    return () => {
+      const refCurrent = blockRef;
+      if (refCurrent.current) observer.unobserve(refCurrent.current);
+    };
+  });
+
   return (
     <div
       className={`w-full h-[342px] md:h-[378px] lg:h-[478px] bg-cover bg-[center] rounded-xl ${
@@ -10,9 +42,10 @@ export default function CBSBanner({ title }: { title: string }) {
       }`}
     >
       <div
-        className={`w-auto lg:w-[960px] h-full mx-[16px] md:mx-[44px] lg:mx-auto flex flex-col gap-5 md:gap-10 justify-start md:justify-center ${
+        ref={blockRef}
+        className={`w-auto lg:w-[960px] h-full mx-[16px] md:mx-[44px] lg:mx-auto flex flex-col gap-5 md:gap-10 justify-start md:justify-center opacity-0 ${
           title === "Creative" ? "text-white" : ""
-        }`}
+        } ${isVisible ? "animate-slideIn md:animate-slideInLeft" : ""}`}
       >
         <h2 className="mt-[20px] md:mt-0 text-[2.8rem] md:text-[4.8rem] lg:text-[6.4rem] font-bold">
           {title}

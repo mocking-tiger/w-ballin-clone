@@ -48,7 +48,7 @@ export default function HistoryCircle({
   return (
     <div
       ref={blockRef}
-      className={`w-[152px] lg:w-[192px] h-aut history-circle opacity-0 ${
+      className={`w-[152px] lg:w-[192px] h-auto history-circle opacity-0 ${
         isVisible ? "animate-slideIn lg:animate-slideInRight" : ""
       }`}
       style={{
