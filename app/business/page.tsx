@@ -1,3 +1,4 @@
+import CBSBanner from "@/components/CBSBanner";
 import DDMBlock from "@/components/DDMBlock";
 import HistoryCircle from "@/components/HistoryCircle";
 import PartnersAndClients from "@/components/Parteners&Clients";
@@ -104,19 +105,9 @@ export default function Business() {
         </div>
       </article>
       <article>
-        <div className="w-full h-[342px] md:h-[378px] lg:h-[478px] bg-[url('/business/keyword-creative-bg-s.webp')] md:bg-[url('/business/keyword-creative-bg-ml.webp')] bg-cover bg-[center] rounded-xl">
-          <div className="h-full mx-[16px] md:mx-[44px] lg:mx-[108px] text-white flex flex-col gap-5 md:gap-10 justify-start md:justify-center">
-            <h2 className="mt-[20px] md:mt-0 text-[2.8rem] md:text-[4.8rem] lg:text-[6.4rem] font-bold">
-              Creative
-            </h2>
-            <p className="w-full max-w-[550px] md:w-[500px] text-[1.5rem] md:text-[1.8rem] lg:text-[2rem]">
-              각 분야별 최고의 Guru들로 구성된 회사로서 다년간 수행한 수많은
-              실적을 바탕으로 탁월한 기획력, 신뢰와 창의를
-              <br className="hidden md:block" /> 바탕으로 한 사명감과 신뢰가
-              가득한 믿음직한 기업 위볼린
-            </p>
-          </div>
-        </div>
+        <CBSBanner title="Creative" />
+        <CBSBanner title="Best Partner" />
+        <CBSBanner title="Success" />
       </article>
     </section>
   );
