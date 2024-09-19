@@ -143,6 +143,17 @@ body {
   }
 }
 
+.input::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: black;
+  left: 1px;
+  top: 10px;
+  border-radius: 100%;
+}
+
 ::-webkit-scrollbar {
   width: 2px;
 }

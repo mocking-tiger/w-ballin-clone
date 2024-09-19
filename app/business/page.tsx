@@ -1,4 +1,5 @@
 import CBSBanner from "@/components/CBSBanner";
+import Contact from "@/components/Contact";
 import DDMBlock from "@/components/DDMBlock";
 import HistoryCircle from "@/components/HistoryCircle";
 import PartnersAndClients from "@/components/Parteners&Clients";
@@ -23,8 +24,7 @@ export default function Business() {
         <DDMBlock
           bg="bg-businessDesign"
           logo="/business/design-logo.webp"
-          description="UI/UX 디자인 전문가로 이루어진 팀으로부터
-트랜디한 디자인을 받아 보실 수 있습니다."
+          description="UI/UX 디자인 전문가로 이루어진 팀으로부터 트랜디한 디자인을 받아 보실 수 있습니다."
           icons={[
             "bg-[url('/business/ps-icon.webp')]",
             "bg-[url('/business/ai-icon.webp')]",
@@ -57,8 +57,7 @@ export default function Business() {
         <DDMBlock
           bg="bg-businessMarketing"
           logo="/business/mkt-logo.webp"
-          description="SEO, SEM, 광고관리 등을 다양한 내/외부 솔루션을 통해
-성과를 극대화하고, 철저하게 분석, 관리, 컨설팅 해드립니다."
+          description="SEO, SEM, 광고관리 등을 다양한 내/외부 솔루션을 통해 성과를 극대화하고, 철저하게 분석, 관리, 컨설팅 해드립니다."
           icons={[
             "bg-[url('/business/ads-icon.webp')]",
             "bg-[url('/business/analytics-icon.webp')]",
@@ -108,6 +107,9 @@ export default function Business() {
         <CBSBanner title="Creative" />
         <CBSBanner title="Best Partner" />
         <CBSBanner title="Success" />
+      </article>
+      <article className="my-[120px]">
+        <Contact />
       </article>
     </section>
   );

@@ -33,7 +33,7 @@ export default function CBSBanner({ title }: { title: string }) {
 
   return (
     <div
-      className={`w-full h-[342px] md:h-[378px] lg:h-[478px] bg-cover bg-[center] rounded-xl ${
+      className={`w-full h-[342px] md:h-[378px] lg:h-[478px] bg-cover bg-[center] rounded-xl border border-black ${
         title === "Creative"
           ? "bg-[url('/business/keyword-creative-bg-s.webp')] md:bg-[url('/business/keyword-creative-bg-ml.webp')]"
           : title === "Best Partner"
