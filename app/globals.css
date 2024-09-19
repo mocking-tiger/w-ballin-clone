@@ -166,3 +166,34 @@ body {
   background-color: #fff; /* 스크롤바 색상 */
   border: 1px solid #ffffff; /* 스크롤바 바깥쪽 테두리 */
 }
+
+.custom-range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background: #e0e0e0;
+  outline: none;
+  border-radius: 5px;
+  position: relative;
+}
+
+.custom-range-slider::-webkit-slider-thumb {
+  position: relative;
+  top: -15px;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 35px;
+  height: 35px;
+  background-color: black;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+/* 슬라이더 트랙 스타일 */
+.custom-range-slider::-webkit-slider-runnable-track {
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 5px;
+}

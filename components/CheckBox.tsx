@@ -5,9 +5,11 @@ import { useState } from "react";
 export default function CheckBox({
   about,
   width,
+  policy = false,
 }: {
   about: string;
   width: string;
+  policy?: boolean;
 }) {
   const [isClicked, setIsClicked] = useState(false);
 
@@ -26,7 +28,13 @@ export default function CheckBox({
             : "",
         }}
       ></div>
-      <span className="text-[2.2rem] font-bold">{about}</span>
+      <span
+        className={`${
+          policy ? "text-[1.8rem] text-[#6f6f6f]" : "text-[2.2rem]"
+        } font-bold`}
+      >
+        {about}
+      </span>
     </div>
   );
 }
