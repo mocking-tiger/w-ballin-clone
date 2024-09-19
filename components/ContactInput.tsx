@@ -14,9 +14,10 @@ export default function ContactInput({
       }`}
     >
       <input
+        required={required}
         type={type}
         placeholder={placeholder}
-        className="w-full px-[10px] text-[2.2rem] focus:outline-none"
+        className="w-full px-[10px] text-[1.8rem] lg:text-[2.2rem] focus:outline-none"
       />
     </div>
   );

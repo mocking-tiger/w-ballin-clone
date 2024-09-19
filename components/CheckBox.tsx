@@ -19,7 +19,7 @@ export default function CheckBox({
       onClick={() => setIsClicked((prev) => !prev)}
     >
       <div
-        className={`w-[29px] h-[29px] border border-black rounded-lg bg-gray-100 bg-center ${
+        className={`w-[22px] md:w-[29px] h-[22px] md:h-[29px] border border-black rounded-lg bg-gray-100 bg-center ${
           !isClicked && "group-hover:bg-[url('/business/form-chk-hover.png')]"
         }`}
         style={{
@@ -30,7 +30,9 @@ export default function CheckBox({
       ></div>
       <span
         className={`${
-          policy ? "text-[1.8rem] text-[#6f6f6f]" : "text-[2.2rem]"
+          policy
+            ? "text-[1.6rem] lg:text-[1.8rem] text-[#6f6f6f]"
+            : "text-[1.8rem] md:text-[2.2rem]"
         } font-bold`}
       >
         {about}
