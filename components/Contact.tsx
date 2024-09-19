@@ -6,7 +6,7 @@ import ContactInput from "./ContactInput";
 import ModalForContact from "./ModalForContact";
 
 export default function Contact() {
-  const [budget, setBudget] = useState(100);
+  const [budget, setBudget] = useState(300);
   const [thisModal, setThisModal] = useState(false);
   const sliderLevels = [100, 150, 200, 250, 300, 350, 400, 450, 500];
 
