@@ -4,6 +4,7 @@ import { FormEvent, useEffect, useState } from "react";
 import CheckBox from "./CheckBox";
 import ContactInput from "./ContactInput";
 import ModalForContact from "./ModalForContact";
+import MapBox from "./MapBox";
 
 export default function Contact() {
   const [budget, setBudget] = useState(300);
@@ -183,6 +184,7 @@ export default function Contact() {
         </button>
       </form>
       <ModalForContact thisModal={thisModal} setThisModal={setThisModal} />
+      <MapBox />
     </div>
   );
 }
