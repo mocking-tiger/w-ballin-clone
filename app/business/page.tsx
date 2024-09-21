@@ -111,6 +111,38 @@ export default function Business() {
       <article className="my-[120px]">
         <Contact />
       </article>
+      <footer className="py-[32px] lg:py-[72px] bg-black text-white ">
+        <div className="w-[95%] lg:w-[960px] mx-auto ">
+          <div className="mb-[20px] lg:mb-[50px] text-[2.4rem] md:text-[3.2rem] lg:text-[4rem] font-bold">
+            <h2 className="mb-[10px] md:mb-0">010-3469-7095</h2>
+            <h2>dyden119@gmail.com</h2>
+          </div>
+          <div className="flex flex-col lg:flex-row justify-between items-end">
+            <div className="w-full lg:w-fit text-gray-500 text-[1.4rem] lg:text-[1.6rem] order-1 lg:order-none">
+              © 2021 W-ballin. All Rights Reserved.
+              <br /> Proudly made by W-ballin
+            </div>
+            <div className="w-fit mb-[22px] lg:mb-0 ">
+              <div className="mb-[16px] flex flex-col gap-2">
+                <span className="text-[1.4rem] lg:text-[1.6rem] text-gray-300">
+                  Head Office
+                </span>
+                <span className="text-[1.8rem] lg:text-[2rem]">
+                  (02215)서울 중랑구 면목천로19길 47
+                </span>
+              </div>
+              <div className="flex flex-col gap-2">
+                <span className="text-[1.4rem] lg:text-[1.6rem] text-gray-300">
+                  R&D Office
+                </span>
+                <span className="text-[1.8rem] lg:text-[2rem]">
+                  헤드 오피스 월세 내는것도 힘들어서 아직 없음
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </section>
   );
 }
