@@ -33,12 +33,12 @@ export default function ModalForContact({
   return (
     <div
       ref={modalRef}
-      className={`w-[400px] lg:w-auto max-w-[800px] h-auto max-h-[732px] p-[16px] lg:p-[40px] fixed z-20 left-16 bottom-16 border-2 bg-black text-white rounded-[1vw] ${
+      className={`w-[302px] md:w-[400px] lg:w-auto max-w-[800px] h-auto max-h-[732px] p-[16px] lg:p-[40px] fixed z-20 left-16 bottom-16 border-2 bg-black text-white rounded-[1vw] ${
         thisModal ? "block" : "hidden"
       }`}
     >
       <div
-        className={`w-full lg:w-[712px] h-auto max-h-[574px] border-2 rounded-[1vw] overflow-hidden relative bg-white text-black`}
+        className={`w-full lg:w-[712px] h-auto max-h-[574px] border-2 rounded-[1vw] overflow-y-auto relative bg-white text-black`}
       >
         <div className="p-5">
           <div className="mb-10">
@@ -52,19 +52,19 @@ export default function ModalForContact({
               동의가 필요하오니 아래 내용을 참고하여주시기 바랍니다.
             </p>
             <div className="flex flex-wrap justify-between text-[1.5rem]">
-              <div>
+              <div className="mb-20 md:mb-0">
                 <p className="mb-3">목적</p>
                 <p className="mb-3">본인여부 확인</p>
                 <p className="mb-3">문의에 대한 답변</p>
               </div>
-              <div>
+              <div className="mb-20 md:mb-0">
                 <p className="mb-3">항목</p>
                 <p className="mb-3">성명</p>
                 <p className="mb-3">
                   업체명, 연락처, 이메일, 제목, 현 사이트/맵 주소, 요청사항
                 </p>
               </div>
-              <div>
+              <div className="mb-20 md:mb-0">
                 <p className="mb-3">보유기간</p>
                 <p className="mb-3">답변완료 후 5일까지</p>
                 <p className="mb-3">답변완료 후 5일까지</p>
