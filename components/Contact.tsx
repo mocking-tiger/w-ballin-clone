@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import CheckBox from "./CheckBox";
 import ContactInput from "./ContactInput";
 import ModalForContact from "./ModalForContact";
@@ -10,8 +10,36 @@ export default function Contact() {
   const [budget, setBudget] = useState(300);
   const [thisModal, setThisModal] = useState(false);
   const [isRecaptchaLoaded, setIsRecaptchaLoaded] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [width, setWidth] = useState<number>(0);
   const sliderLevels = [100, 150, 200, 250, 300, 350, 400, 450, 500];
+
+  const blockRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 1,
+      }
+    );
+
+    if (blockRef.current) {
+      observer.observe(blockRef.current);
+    }
+
+    return () => {
+      const refCurrent = blockRef;
+      if (refCurrent.current) observer.unobserve(refCurrent.current);
+    };
+  }, []);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -50,9 +78,20 @@ export default function Contact() {
   }, []);
 
   return (
-    <div className="w-[90%] lg:w-[960px] mx-auto font-bold">
-      <h2 className="mb-[60px] text-[2.2rem] lg:text-[4rem]">Contact</h2>
-      <div className="w-full mb-[47px] text-[2.4rem] lg:text-[4.8rem] flex flex-col items-end">
+    <div className={`w-[90%] lg:w-[960px] mx-auto font-bold`}>
+      <h2
+        ref={blockRef}
+        className={`mb-[60px] text-[2.2rem] lg:text-[4rem] opacity-0 ${
+          isVisible ? "animate-fadeInFast" : ""
+        }`}
+      >
+        Contact
+      </h2>
+      <div
+        className={`w-full mb-[47px] text-[2.4rem] lg:text-[4.8rem] flex flex-col items-end opacity-0 ${
+          isVisible ? "animate-fadeInFast" : ""
+        }`}
+      >
         <p className="w-auto lg:w-[503.91px]">
           <a href="tel:010-3469-7095">010-3469-7095</a>
         </p>
@@ -60,8 +99,12 @@ export default function Contact() {
           <a href="mailto:dyden119@gmail.com">dyden119@gmail.com</a>
         </p>
       </div>
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20">
+      <form
+        onSubmit={(e) => handleSubmit(e)}
+        className={`opacity-0 ${isVisible ? "animate-slideIn" : ""}`}
+        style={{ animationDelay: "0.4s" }}
+      >
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-x-20`}>
           <ContactInput placeholder="업체명" />
           <ContactInput placeholder="성명" />
           <ContactInput placeholder="연락처" />

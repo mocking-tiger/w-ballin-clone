@@ -1,6 +1,6 @@
 "use client";
 
-import { CustomOverlayMap, Map, MapMarker } from "react-kakao-maps-sdk";
+import { Map, MapMarker } from "react-kakao-maps-sdk";
 import useKakaoLoader from "./use-kakao-loader";
 import { useEffect } from "react";
 

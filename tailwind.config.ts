@@ -35,6 +35,7 @@ const config: Config = {
         slideInRight: "slideInRight 0.7s ease forwards",
         slideInLeft: "slideInLeft 0.7s ease forwards",
         fadeIn: "fadeIn 0.7s linear 0.7s forwards",
+        fadeInFast: "fadeIn 0.7s linear forwards",
       },
       keyframes: {
         slideIn: {
