@@ -108,7 +108,7 @@ export default function Business() {
         <CBSBanner title="Best Partner" />
         <CBSBanner title="Success" />
       </article>
-      <article className="my-[120px]">
+      <article className="my-[30px] lg:my-[120px]">
         <Contact />
       </article>
       <footer className="py-[32px] lg:py-[72px] bg-black text-white ">
