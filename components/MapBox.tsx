@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import KakaoMap from "./KakaoMap";
+import Image from "next/image";
 
 export default function MapBox() {
   const blockRef = useRef<HTMLDivElement | null>(null);
@@ -52,12 +53,22 @@ export default function MapBox() {
         </div>
       </div>
       <div
-        className={`aspect-[16/9] mt-20 opacity-0 ${
+        className={`aspect-[16/9] mt-20 mb-[18px] opacity-0 ${
           isVisible ? "animate-slideIn" : ""
         }`}
         style={{ animationDelay: "0.4s" }}
       >
         <KakaoMap />
+      </div>
+      <div className="w-full p-[16px] lg:px-[26px] lg:py-[23px] bg-[#f2f2f2] rounded-xl text-[1.6rem] flex flex-wrap justify-start lg:justify-center items-center gap-y-1 gap-[20px]">
+        {"[7호선] 면목역 3번 출구"}
+        <Image
+          width={22}
+          height={22}
+          src="/business/map-arrow.png"
+          alt="arrow-icon"
+        />
+        {"건물 이름은 따로 없음"}
       </div>
     </div>
   );

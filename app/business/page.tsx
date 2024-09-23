@@ -71,7 +71,10 @@ export default function Business() {
         />
       </article>
       <article>
-        <div className="w-[95%] lg:w-[960px] mx-auto py-[50px] lg:py-[120px]">
+        <div
+          id="history"
+          className="w-[95%] lg:w-[960px] mx-auto py-[50px] lg:py-[120px] scrollTarget"
+        >
           <h2 className="mb-[20px] lg:mb-[50px] text-[2.2rem] lg:text-[4rem] font-bold">
             HISTORY
           </h2>

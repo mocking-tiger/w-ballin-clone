@@ -2,7 +2,10 @@ import CompanyBlock from "./CompanyBlock";
 
 export default function PartnersAndClients() {
   return (
-    <div className="w-[90%] lg:w-[960px] mx-auto mb-[100px]">
+    <div
+      id="partners"
+      className="w-[90%] lg:w-[960px] mx-auto mb-[100px] scrollTarget"
+    >
       <h2 className="my-[24px] lg:my-[56px] text-[2rem] lg:text-[4rem] font-bold">
         Partners & Clients
       </h2>

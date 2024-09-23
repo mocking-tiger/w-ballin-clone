@@ -54,8 +54,9 @@ export default function DDMBlock({
 
   return (
     <div
+      id="DDM"
       ref={blockRef}
-      className={`w-[90%] lg:w-[960px] mx-auto mb-[24px] p-[32px] rounded-lg relative ${bg} ${
+      className={`w-[90%] lg:w-[960px] mx-auto mb-[24px] p-[32px] rounded-lg relative scrollTarget ${bg} ${
         isVisible ? "animate-slideIn" : "opacity-0"
       }`}
     >

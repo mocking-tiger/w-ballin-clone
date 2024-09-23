@@ -78,7 +78,10 @@ export default function Contact() {
   }, []);
 
   return (
-    <div className={`w-[90%] lg:w-[960px] mx-auto font-bold`}>
+    <div
+      id="contact"
+      className={`w-[90%] lg:w-[960px] mx-auto font-bold scrollTarget`}
+    >
       <h2
         ref={blockRef}
         className={`mb-[60px] text-[2.2rem] lg:text-[4rem] opacity-0 ${
