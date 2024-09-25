@@ -30,7 +30,7 @@ export default function Header() {
       {isClick && (
         <div className="w-full h-screen mt-[54px] lg:mt-[66px] px-[46px] text-white fixed inset-0 bg-black z-50 flex flex-col gap-[30px] lg:hidden">
           <div
-            className={`w-[54px] h-[32px] mt-[10px] border border-white rounded-full bg-[rgba(199,199,199,0.4)] cursor-pointer relative`}
+            className={`w-[54px] h-[28px] md:h-[32px] mt-[10px] border border-white rounded-full bg-[rgba(199,199,199,0.4)] cursor-pointer relative`}
             onClick={() => {
               page === "/business"
                 ? router.push("/")

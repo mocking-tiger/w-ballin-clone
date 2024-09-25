@@ -40,7 +40,7 @@ export default function NavBusiness({
         {"KR"}
       </li>
       <div
-        className={`w-[46px] md:w-[54px] h-[26px] md:h-[32px] border border-white rounded-full bg-[rgba(199,199,199,0.4)] cursor-pointer group relative ${
+        className={`w-[46px] md:w-[54px] h-[28px] md:h-[32px] border border-white rounded-full bg-[rgba(199,199,199,0.4)] cursor-pointer group relative ${
           isClick ? "hidden" : ""
         }`}
         onClick={() => {
