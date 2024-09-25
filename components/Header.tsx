@@ -28,7 +28,7 @@ export default function Header() {
         )}
       </div>
       {isClick && (
-        <div className="w-full h-screen mt-[54px] lg:mt-[66px] px-[46px] text-white fixed inset-0 bg-black z-50 flex flex-col gap-[30px] lg:hidden">
+        <div className="w-full h-screen mt-[54px] lg:mt-[66px] px-[20px] lg:px-[46px] text-white fixed inset-0 bg-black z-50 flex flex-col gap-[30px] lg:hidden">
           <div
             className={`w-[54px] h-[28px] md:h-[32px] mt-[10px] border border-white rounded-full bg-[rgba(199,199,199,0.4)] cursor-pointer relative`}
             onClick={() => {
@@ -44,36 +44,55 @@ export default function Header() {
               <div className="w-[20px] md:w-[24px] h-[20px] md:h-[24px] bg-[#fff] bg-toggleBusiness bg-cover rounded-full absolute top-[3px] right-1 lg:group-hover:-translate-x-2 transition-transform duration-300"></div>
             )}{" "}
           </div>
-          <div className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer">
-            <span>Design</span>
-            <Image
-              className="relative -top-5 -right-5"
-              src="/header-arrow01.svg"
-              width={12}
-              height={12}
-              alt="arrow-icon1"
-            />
-          </div>
-          <div className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer">
-            <span>Development</span>
-            <Image
-              className="relative -top-5 -right-5"
-              src="/header-arrow02.svg"
-              width={12}
-              height={12}
-              alt="arrow-icon2"
-            />
-          </div>
-          <div className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer">
-            <span>Digital Marketing</span>
-            <Image
-              className="relative -top-5 -right-5"
-              src="/header-arrow03.svg"
-              width={12}
-              height={12}
-              alt="arrow-icon3"
-            />
-          </div>
+          {page === "/" ? (
+            <div className="flex flex-col gap-[30px] ">
+              <div className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer">
+                <span>Design</span>
+                <Image
+                  className="relative -top-5 -right-5"
+                  src="/header-arrow01.svg"
+                  width={12}
+                  height={12}
+                  alt="arrow-icon1"
+                />
+              </div>
+              <div className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer">
+                <span>Development</span>
+                <Image
+                  className="relative -top-5 -right-5"
+                  src="/header-arrow02.svg"
+                  width={12}
+                  height={12}
+                  alt="arrow-icon2"
+                />
+              </div>
+              <div className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer">
+                <span>Digital Marketing</span>
+                <Image
+                  className="relative -top-5 -right-5"
+                  src="/header-arrow03.svg"
+                  width={12}
+                  height={12}
+                  alt="arrow-icon3"
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-[30px] ">
+              <div className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer">
+                <span>클라이언트</span>
+              </div>
+              <div className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer">
+                <span>서비스</span>
+              </div>
+              <div className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer">
+                <span>연혁</span>
+              </div>
+              <div className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer">
+                <span>문의하기</span>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </header>

@@ -54,7 +54,6 @@ export default function Contact() {
   };
 
   const handleWidth = () => {
-    console.log(window.innerWidth);
     setWidth(window.innerWidth);
   };
 

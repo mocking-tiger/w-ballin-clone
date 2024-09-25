@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useEffect } from "react";
 
 export default function NavBusiness({
   isClick,
@@ -12,6 +12,20 @@ export default function NavBusiness({
   page: string;
 }) {
   const router = useRouter();
+
+  const handleSetClick = () => {
+    const width = window.innerWidth;
+    if (width > 1023) {
+      setIsClick(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleSetClick);
+
+    return () => window.removeEventListener("resize", handleSetClick);
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <ul className="pr-[30px] flex gap-5 lg:gap-20 items-center text-white text-[2rem] font-[SpoqaHanSansNeo-Regular]">
