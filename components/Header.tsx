@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import { useLanguageContext } from "@/context/LanguageContext";
 import Image from "next/image";
 import Link from "next/link";
 import NavCasual from "./NavCasual";
@@ -10,7 +11,9 @@ import NavBusiness from "./NavBusiness";
 export default function Header() {
   const page = usePathname();
   const router = useRouter();
+  const { lang, changeLanguage } = useLanguageContext();
   const [isClick, setIsClick] = useState(false);
+  const [isHover, setIsHover] = useState(false);
 
   return (
     <header className="w-full px-0 fixed top-0 z-10 md:px-[34px] lg:px-[68px] bg-black">
@@ -43,6 +46,32 @@ export default function Header() {
             ) : (
               <div className="w-[20px] md:w-[24px] h-[20px] md:h-[24px] bg-[#fff] bg-toggleBusiness bg-cover rounded-full absolute top-[3px] right-1 lg:group-hover:-translate-x-2 transition-transform duration-300"></div>
             )}{" "}
+          </div>
+          <div
+            className="w-fit underline text-gray-300 items-center gap-7 cursor-pointer flex absolute left-[90px] top-[7px] md:top-[10px]"
+            onMouseEnter={() => setIsHover(true)}
+          >
+            <div className="w-[6px] h-[6px] bg-gray-500 rounded-full"></div>
+            <span className="text-[2rem]">KR</span>
+            {isHover && (
+              <div
+                className={`p-5 absolute bg-white rounded-2xl -bottom-[90px] right-0 border border-black text-[1.8rem] flex flex-col gap-3`}
+                onMouseLeave={() => setIsHover(false)}
+              >
+                <span
+                  className={`${lang === "ENG" ? "text-black" : "underline"}`}
+                  onClick={() => changeLanguage("KOR")}
+                >
+                  한국어
+                </span>
+                <span
+                  className={`${lang === "KOR" ? "text-black" : "underline"}`}
+                  onClick={() => changeLanguage("ENG")}
+                >
+                  ENGLISH
+                </span>
+              </div>
+            )}
           </div>
           {page === "/" ? (
             <div className="flex flex-col gap-[30px] ">

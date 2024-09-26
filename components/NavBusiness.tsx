@@ -1,6 +1,9 @@
-import Image from "next/image";
+"use client";
+
+import { useLanguageContext } from "@/context/LanguageContext";
 import { useRouter } from "next/navigation";
-import { Dispatch, SetStateAction, useEffect } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function NavBusiness({
   isClick,
@@ -12,6 +15,8 @@ export default function NavBusiness({
   page: string;
 }) {
   const router = useRouter();
+  const { lang, changeLanguage } = useLanguageContext();
+  const [isHover, setIsHover] = useState(false);
 
   const handleSetClick = () => {
     const width = window.innerWidth;
@@ -49,9 +54,31 @@ export default function NavBusiness({
           문의하기
         </li>
       </a>
-      <li className="underline text-gray-300 items-center gap-10 cursor-pointer hidden lg:flex">
+      <li
+        className="underline text-gray-300 items-center gap-10 cursor-pointer hidden lg:flex relative"
+        onMouseEnter={() => setIsHover(true)}
+      >
         <div className="w-[6px] h-[6px] bg-gray-500 rounded-full"></div>
         {"KR"}
+        {isHover && (
+          <div
+            className={`p-5 absolute bg-white rounded-2xl -bottom-[90px] right-0 border border-black text-[1.8rem] flex flex-col gap-3`}
+            onMouseLeave={() => setIsHover(false)}
+          >
+            <span
+              className={`${lang === "ENG" ? "text-black" : "underline"}`}
+              onClick={() => changeLanguage("KOR")}
+            >
+              한국어
+            </span>
+            <span
+              className={`${lang === "KOR" ? "text-black" : "underline"}`}
+              onClick={() => changeLanguage("ENG")}
+            >
+              ENGLISH
+            </span>
+          </div>
+        )}
       </li>
       <div
         className={`w-[46px] md:w-[54px] h-[28px] md:h-[32px] border border-white rounded-full bg-[rgba(199,199,199,0.4)] cursor-pointer group relative ${

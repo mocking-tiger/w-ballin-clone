@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 import Header from "@/components/Header";
 import "./globals.css";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const rubik = Rubik({
   weight: ["400", "700"], // 보통과 굵은 글꼴 사용
@@ -30,8 +31,10 @@ export default function RootLayout({
         ></script>
       </head>
       <body className={`${rubik.className} antialiased`}>
-        <Header />
-        {children}
+        <LanguageProvider>
+          <Header />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
