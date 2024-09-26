@@ -64,7 +64,7 @@ export default function HistoryCircle({
         }`}
       >
         <p
-          className={`text-[1.8rem] lg:text-[2.2rem] font-bold ${
+          className={`text-[1.8rem] lg:text-[2.2rem] font-bold text-center ${
             square === "" ? "text-white" : ""
           }`}
         >
@@ -79,7 +79,6 @@ export default function HistoryCircle({
         {square}
         {square === "With" && (
           <>
-            {" "}
             <Image
               className="inline"
               src="/business/hist-google.webp"

@@ -52,7 +52,7 @@ export default function Header() {
             onMouseEnter={() => setIsHover(true)}
           >
             <div className="w-[6px] h-[6px] bg-gray-500 rounded-full"></div>
-            <span className="text-[2rem]">KR</span>
+            <span className="text-[2rem]">{lang === "KOR" ? "KR" : "EN"}</span>
             {isHover && (
               <div
                 className={`p-5 absolute bg-white rounded-2xl -bottom-[90px] right-0 border border-black text-[1.8rem] flex flex-col gap-3`}
@@ -109,16 +109,16 @@ export default function Header() {
           ) : (
             <div className="flex flex-col gap-[30px] ">
               <div className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer">
-                <span>클라이언트</span>
+                <span>{lang === "KOR" ? "클라이언트" : "Clients"}</span>
               </div>
               <div className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer">
-                <span>서비스</span>
+                <span>{lang === "KOR" ? "서비스" : "Service"}</span>
               </div>
               <div className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer">
-                <span>연혁</span>
+                <span>{lang === "KOR" ? "연혁" : "History"}</span>
               </div>
               <div className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer">
-                <span>문의하기</span>
+                <span>{lang === "KOR" ? "문의하기" : "Contact"}</span>
               </div>
             </div>
           )}

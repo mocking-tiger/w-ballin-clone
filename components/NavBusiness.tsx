@@ -36,22 +36,22 @@ export default function NavBusiness({
     <ul className="pr-[30px] flex gap-5 lg:gap-20 items-center text-white text-[2rem] font-[SpoqaHanSansNeo-Regular]">
       <a href="#partners">
         <li className="cursor-pointer hidden lg:block underline-animation">
-          클라이언트
+          {lang === "KOR" ? "클라이언트" : "Clients"}
         </li>
       </a>
       <a href="#DDM">
         <li className="cursor-pointer hidden lg:block underline-animation">
-          서비스
+          {lang === "KOR" ? "서비스" : "Service"}
         </li>
       </a>
       <a href="#history">
         <li className="cursor-pointer hidden lg:block underline-animation">
-          연혁
+          {lang === "KOR" ? "연혁" : "History"}
         </li>
       </a>
       <a href="#contact">
         <li className="-mr-10 cursor-pointer hidden lg:block underline-animation">
-          문의하기
+          {lang === "KOR" ? "문의하기" : "Contact"}
         </li>
       </a>
       <li
@@ -59,7 +59,7 @@ export default function NavBusiness({
         onMouseEnter={() => setIsHover(true)}
       >
         <div className="w-[6px] h-[6px] bg-gray-500 rounded-full"></div>
-        {"KR"}
+        {lang === "KOR" ? "KR" : "EN"}
         {isHover && (
           <div
             className={`p-5 absolute bg-white rounded-2xl -bottom-[90px] right-0 border border-black text-[1.8rem] flex flex-col gap-3`}

@@ -5,8 +5,10 @@ import CheckBox from "./CheckBox";
 import ContactInput from "./ContactInput";
 import ModalForContact from "./ModalForContact";
 import MapBox from "./MapBox";
+import { useLanguageContext } from "@/context/LanguageContext";
 
 export default function Contact() {
+  const { lang } = useLanguageContext();
   const [budget, setBudget] = useState(300);
   const [thisModal, setThisModal] = useState(false);
   const [isRecaptchaLoaded, setIsRecaptchaLoaded] = useState(false);
@@ -107,12 +109,24 @@ export default function Contact() {
         style={{ animationDelay: "0.4s" }}
       >
         <div className={`grid grid-cols-1 md:grid-cols-2 gap-x-20`}>
-          <ContactInput placeholder="업체명" />
-          <ContactInput placeholder="성명" />
-          <ContactInput placeholder="연락처" />
-          <ContactInput placeholder="이메일" type="email" />
-          <ContactInput placeholder="제목" />
-          <ContactInput placeholder="현 사이트 / 앱 주소" required={false} />
+          <ContactInput
+            placeholder={lang === "KOR" ? "업체명" : "Company name"}
+          />
+          <ContactInput placeholder={lang === "KOR" ? "성명" : "Name"} />
+          <ContactInput
+            placeholder={lang === "KOR" ? "연락처" : "Phone Number"}
+            type="email"
+          />
+          <ContactInput placeholder={lang === "KOR" ? "이메일" : "E-mail"} />
+          <ContactInput placeholder={lang === "KOR" ? "제목" : "Title"} />
+          <ContactInput
+            required={false}
+            placeholder={
+              lang === "KOR"
+                ? "현 사이트 / 앱 주소"
+                : "Current site / App address"
+            }
+          />
         </div>
         <div className="my-[30px] flex flex-col md:flex-row justify-between">
           <h3 className="mb-10 md:mb-0 text-[2.2rem] font-bold">관심분야</h3>

@@ -1,10 +1,15 @@
+"use client";
+
 import CBSBanner from "@/components/CBSBanner";
 import Contact from "@/components/Contact";
 import DDMBlock from "@/components/DDMBlock";
 import HistoryCircle from "@/components/HistoryCircle";
 import PartnersAndClients from "@/components/Parteners&Clients";
+import { useLanguageContext } from "@/context/LanguageContext";
 
 export default function Business() {
+  const { lang } = useLanguageContext();
+
   return (
     <section className="mt-[54px] md:mt-[66px] font-[SpoqaHanSansNeo-Regular]">
       <article className="w-full h-[240px] md:h-[400px] lg:h-[600px] bg-business1 bg-cover bg-[center]">
@@ -24,7 +29,11 @@ export default function Business() {
         <DDMBlock
           bg="bg-businessDesign"
           logo="/business/design-logo.webp"
-          description="UI/UX 디자인 전문가로 이루어진 팀으로부터 트랜디한 디자인을 받아 보실 수 있습니다."
+          description={
+            lang === "KOR"
+              ? "UI/UX 디자인 전문가로 이루어진 팀으로부터 트랜디한 디자인을 받아 보실 수 있습니다."
+              : "Our experienced UI/UX designers provide the trendy designs."
+          }
           icons={[
             "bg-[url('/business/ps-icon.webp')]",
             "bg-[url('/business/ai-icon.webp')]",
@@ -38,8 +47,11 @@ export default function Business() {
         <DDMBlock
           bg="bg-businessDev"
           logo="/business/dev-logo.webp"
-          description="원하시는 모든 분기의 반응형 웹, 다양한 효과를 가진 사이트
-           등 상상하셨던 홈페이지를 현실로 만들어드립니다."
+          description={
+            lang === "KOR"
+              ? "원하시는 모든 분기의 반응형 웹, 다양한 효과를 가진 사이트 등 상상하셨던 홈페이지를 현실로 만들어드립니다."
+              : "We will make your dream website a reality, such as a responsive web of every branch you want and a website with several effects."
+          }
           icons={[
             "bg-[url('/business/html5-icon.webp')]",
             "bg-[url('/business/css3-icon.webp')]",
@@ -57,7 +69,11 @@ export default function Business() {
         <DDMBlock
           bg="bg-businessMarketing"
           logo="/business/mkt-logo.webp"
-          description="SEO, SEM, 광고관리 등을 다양한 내/외부 솔루션을 통해 성과를 극대화하고, 철저하게 분석, 관리, 컨설팅 해드립니다."
+          description={
+            lang === "KOR"
+              ? "SEO, SEM, 광고관리 등을 다양한 내/외부 솔루션을 통해 성과를 극대화하고, 철저하게 분석, 관리, 컨설팅 해드립니다."
+              : "We analyze and offer professional consultation with various internal/external solutions to maximize the performance in SEO, SEM and Ads."
+          }
           icons={[
             "bg-[url('/business/ads-icon.webp')]",
             "bg-[url('/business/analytics-icon.webp')]",
@@ -81,25 +97,31 @@ export default function Business() {
           <div className="flex flex-wrap lg:gap-24 justify-between lg:justify-center overflow-hidden">
             <HistoryCircle
               year="2012"
-              innerCircle="회사 설립"
+              innerCircle={
+                lang === "KOR" ? "회사 설립" : "Company Establishment"
+              }
               square="JYP Network"
               index={3}
             />
             <HistoryCircle
               year="2014"
-              innerCircle="R&D Center 확장"
-              square="청담 센터"
+              innerCircle={
+                lang === "KOR" ? "R&D Center 확장" : "R&D Center Expansion"
+              }
+              square={lang === "KOR" ? "청담 센터" : "Cheongdam Center"}
               index={2}
             />
             <HistoryCircle
               year="2018"
-              innerCircle="컨퍼런스 주최"
+              innerCircle={lang === "KOR" ? "컨퍼런스 주최" : "Conference Host"}
               square="With"
               index={1}
             />
             <HistoryCircle
               year="2021"
-              innerCircle="상호 변경"
+              innerCircle={
+                lang === "KOR" ? "상호 변경" : "Change of Company Name"
+              }
               square=""
               index={0}
             />

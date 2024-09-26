@@ -1,5 +1,6 @@
 "use client";
 
+import { useLanguageContext } from "@/context/LanguageContext";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
@@ -15,6 +16,7 @@ export default function DDMBlock({
   icons: string[];
 }) {
   const blockRef = useRef<HTMLDivElement | null>(null);
+  const { lang } = useLanguageContext();
   const [isVisible, setIsVisible] = useState(false);
   const [fadeInIcons, setFadeInIcons] = useState(false);
 
@@ -81,7 +83,9 @@ export default function DDMBlock({
         {description}
       </p>
       <a href="#" className="mb-7 block text-[2rem] text-white md:hidden">
-        <span className="underline text-[1.8rem]">바로가기</span>
+        <span className="underline text-[1.8rem]">
+          {lang === "KOR" ? "바로가기" : "Quick Link"}
+        </span>
         <Image
           className="ml-3 inline group-hover:-translate-y-2 transition-all duration-300"
           src="/business/arrow-top-right.png"
@@ -91,7 +95,7 @@ export default function DDMBlock({
         />
       </a>
       <span className="mb-[18px] block text-[2rem] text-white opacity-35">
-        주요기술
+        {lang === "KOR" ? "주요기술" : "Main Technology"}
       </span>
       <div className="flex gap-8 flex-wrap">
         {icons.map((icon, index) => (
@@ -117,7 +121,7 @@ export default function DDMBlock({
               : "underline-animation4"
           }`}
         >
-          바로가기
+          {lang === "KOR" ? "바로가기" : "Quick Link"}
         </span>
         <Image
           className="ml-3 inline group-hover:-translate-y-2 transition-all duration-300"
