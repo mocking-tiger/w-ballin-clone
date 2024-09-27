@@ -153,7 +153,9 @@ export default function Business() {
                   Head Office
                 </span>
                 <span className="text-[1.8rem] lg:text-[2rem]">
-                  (02215)서울 중랑구 면목천로19길 47
+                  {lang === "KOR"
+                    ? "(02215)서울 중랑구 면목천로19길 47"
+                    : "47, Myeonmokcheon-ro 19-gil, Jungnang-gu,  Seoul, Republic of Korea"}
                 </span>
               </div>
               <div className="flex flex-col gap-2">
@@ -161,7 +163,9 @@ export default function Business() {
                   R&D Office
                 </span>
                 <span className="text-[1.8rem] lg:text-[2rem]">
-                  헤드 오피스 월세 내는것도 힘들어서 아직 없음
+                  {lang === "KOR"
+                    ? "헤드 오피스 월세 내는것도 힘들어서 아직 없음"
+                    : "I have no money for new office, Im beggar"}
                 </span>
               </div>
             </div>

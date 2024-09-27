@@ -3,9 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import KakaoMap from "./KakaoMap";
 import Image from "next/image";
+import { useLanguageContext } from "@/context/LanguageContext";
 
 export default function MapBox() {
   const blockRef = useRef<HTMLDivElement | null>(null);
+  const { lang } = useLanguageContext();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -47,9 +49,9 @@ export default function MapBox() {
           AM
         </div>
         <div className="w-full text-[2rem] text-right lg:text-[2.4rem]">
-          7호선 면목역
+          {lang === "KOR" ? "7호선 면목역" : "Line no.7 Myeon-mok station"}
           <br />
-          3번 출구 700m 이내
+          {lang === "KOR" ? "3번 출구 700m 이내" : "Within 700M from Exit 3"}
         </div>
       </div>
       <div
@@ -61,14 +63,16 @@ export default function MapBox() {
         <KakaoMap />
       </div>
       <div className="w-full p-[16px] lg:px-[26px] lg:py-[23px] bg-[#f2f2f2] rounded-xl text-[1.6rem] flex flex-wrap justify-start lg:justify-center items-center gap-y-1 gap-[20px]">
-        {"[7호선] 면목역 3번 출구"}
+        {lang === "KOR"
+          ? "[7호선] 면목역 3번 출구"
+          : "[Line No.7] Myeon-mok Station Exit #3"}
         <Image
           width={22}
           height={22}
           src="/business/map-arrow.png"
           alt="arrow-icon"
         />
-        {"건물 이름은 따로 없음"}
+        {lang === "KOR" ? "건물 이름은 따로 없음" : "The Building with no-name"}
       </div>
     </div>
   );

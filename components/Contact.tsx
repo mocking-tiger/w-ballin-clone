@@ -129,34 +129,65 @@ export default function Contact() {
           />
         </div>
         <div className="my-[30px] flex flex-col md:flex-row justify-between">
-          <h3 className="mb-10 md:mb-0 text-[2.2rem] font-bold">관심분야</h3>
+          <h3 className="mb-10 md:mb-0 text-[2.2rem] font-bold">
+            {lang === "KOR" ? "관심분야" : "Interests"}
+          </h3>
           <div className="w-auto md:w-[650px] flex flex-wrap gap-y-10 justify-between">
-            <CheckBox about="웹사이트 제작" width="w-auto md:w-[165px]" />
             <CheckBox
-              about="SEO (검색엔진최적화)"
-              width="w-auto md:w-[245px]"
+              about={lang === "KOR" ? "웹사이트 제작" : "Website building"}
+              width={lang === "KOR" ? "w-auto md:w-[165px]" : "w-[319px]"}
             />
-            <CheckBox about="모바일최적화" width="w-auto md:w-[160px]" />
-            <CheckBox about="키워드광고" width="w-auto md:w-[165px]" />
-            <CheckBox about="소셜미디어대행" width="w-auto md:w-[245px]" />
-            <CheckBox about="로컬최적화" width="w-auto md:w-[160px]" />
+            <CheckBox
+              about={lang === "KOR" ? "SEO (검색엔진최적화)" : "SEO"}
+              width={lang === "KOR" ? "w-auto md:w-[245px]" : "w-[319px]"}
+            />
+            <CheckBox
+              about={lang === "KOR" ? "모바일최적화" : "Mobile optimization"}
+              width={lang === "KOR" ? "w-auto md:w-[160px]" : "w-[319px]"}
+            />
+            <CheckBox
+              about={lang === "KOR" ? "키워드광고" : "Keyword advertising"}
+              width={lang === "KOR" ? "w-auto md:w-[165px]" : "w-[319px]"}
+            />
+            <CheckBox
+              about={
+                lang === "KOR" ? "소셜미디어대행" : "Social media operations"
+              }
+              width={lang === "KOR" ? "w-auto md:w-[245px]" : "w-[319px]"}
+            />
+            <CheckBox
+              about={lang === "KOR" ? "로컬최적화" : "Localization"}
+              width={lang === "KOR" ? "w-auto md:w-[160px]" : "w-[319px]"}
+            />
           </div>
         </div>
         <div className="mt-[50px]">
           <div className="flex flex-wrap lg:flex-nowrap justify-between">
             <div className="w-full lg:w-auto flex gap-[16px] items-end">
-              <h3 className="text-[2.0rem] lg:text-[2.2rem]">집행예산</h3>
+              <h3 className="text-[2.0rem] lg:text-[2.2rem]">
+                {lang === "KOR" ? "집행예산" : "Operating Budget"}
+              </h3>
               <h4 className="text-[1.5rem] lg:text-[1.6rem] opacity-85">
-                월 예산
+                {lang === "KOR" ? "월 예산" : "Monthly budget is"}
               </h4>
             </div>
             <div className="w-full lg:w-auto text-right text-[3.0rem] lg:text-[4.8rem]">
-              {`${budget}만원 ${
-                budget === 100 ? "이하" : budget === 500 ? "이상" : ""
-              }`}
-              <span className="text-[1.8rem] lg:text-[2.2rem] opacity-70">
-                입니다.
-              </span>
+              {lang === "KOR"
+                ? `${budget}${"만원"} ${
+                    budget === 100 ? "이하" : budget === 500 ? "이상" : ""
+                  }`
+                : `${
+                    budget === 100
+                      ? "less than"
+                      : budget === 500
+                      ? "more than"
+                      : ""
+                  } ${budget}${"MAN-WON"} `}
+              {lang === "KOR" && (
+                <span className="text-[1.8rem] lg:text-[2.2rem] opacity-70">
+                  입니다.
+                </span>
+              )}
             </div>
           </div>
           <div className="mt-[36px] lg:mt-[48px] mb-[83px] lg:mb-[101px] relative">
@@ -181,7 +212,7 @@ export default function Contact() {
                       level !== 500
                         ? "opacity-0"
                         : ""
-                    } ${index === 8 ? "text-right" : ""}`}
+                    } ${index === 8 ? "text-right lg:text-left" : ""}`}
                   >
                     {level}
                   </span>
@@ -209,14 +240,18 @@ export default function Contact() {
         <div className="mb-[16px] relative">
           <textarea
             required
-            placeholder="요청사항"
+            placeholder={lang === "KOR" ? "요청사항" : "Requests"}
             className="w-full h-[272px] px-[30px] py-[28px] text-[1.6rem] lg:text-[2.2rem] border border-black rounded-2xl resize-none focus:outline-none overflow-hidden"
           />
           <span className="absolute w-[6px] h-[6px] bg-black rounded-full left-10 top-10"></span>
         </div>
         <div className="flex flex-col lg:flex-row gap-2 lg:gap-5 items-start lg:items-center">
           <CheckBox
-            about="개인정보 수집 및 이용에 동의합니다."
+            about={
+              lang === "KOR"
+                ? "개인정보 수집 및 이용에 동의합니다."
+                : "I agree to the terms and conditions of the personal information collection agreement."
+            }
             width="w-fit"
             policy
           />
@@ -224,7 +259,7 @@ export default function Contact() {
             className="text-[1.6rem] lg:text-[1.8rem] underline cursor-pointer font-semibold"
             onClick={() => setThisModal((prev) => !prev)}
           >
-            개인정보 취급방침
+            {lang === "KOR" ? "개인정보 취급방침" : "Privacy Statement"}
           </span>
         </div>
         {isRecaptchaLoaded && (
@@ -239,7 +274,7 @@ export default function Contact() {
           type="submit"
           className="mx-auto px-16 py-4 block text-[2.2rem] bg-black text-white rounded-2xl"
         >
-          문의하기
+          {lang === "KOR" ? "문의하기" : "Send"}
         </button>
       </form>
       <ModalForContact thisModal={thisModal} setThisModal={setThisModal} />
