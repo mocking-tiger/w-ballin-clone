@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import toast from "@/utils/toast";
 import { useRouter } from "next/navigation";
 import { Dispatch, SetStateAction, useEffect } from "react";
 
@@ -31,7 +32,10 @@ export default function NavCasual({
 
   return (
     <ul className="pr-[30px] flex gap-5 lg:gap-20 items-center text-white text-[2rem]">
-      <li className="cursor-pointer hover:text-[#f2756b] relative group transition-colors duration-200 hidden lg:block">
+      <li
+        className="cursor-pointer hover:text-[#f2756b] relative group transition-colors duration-200 hidden lg:block"
+        onClick={() => toast.success("아직 미구현(WIP)")}
+      >
         Design
         <Image
           className="absolute top-2 -right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
@@ -41,7 +45,10 @@ export default function NavCasual({
           alt="arrow-icon1"
         />
       </li>
-      <li className="cursor-pointer hover:text-[#6bf27b] relative group transition-colors duration-200 hidden lg:block">
+      <li
+        className="cursor-pointer hover:text-[#6bf27b] relative group transition-colors duration-200 hidden lg:block"
+        onClick={() => toast.warning("아직 미구현(WIP)")}
+      >
         Development
         <Image
           className="absolute top-2 -right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
@@ -51,7 +58,10 @@ export default function NavCasual({
           alt="arrow-icon2"
         />
       </li>
-      <li className="cursor-pointer hover:text-[#6b6bf2] relative group transition-colors duration-200 hidden lg:block">
+      <li
+        className="cursor-pointer hover:text-[#6b6bf2] relative group transition-colors duration-200 hidden lg:block"
+        onClick={() => toast.error("아직 미구현(WIP)")}
+      >
         Digital Marketing
         <Image
           className="absolute top-2 -right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"

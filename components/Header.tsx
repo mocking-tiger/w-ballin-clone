@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import NavCasual from "./NavCasual";
 import NavBusiness from "./NavBusiness";
+import toast from "@/utils/toast";
 
 export default function Header() {
   const page = usePathname();
@@ -55,7 +56,7 @@ export default function Header() {
             <span className="text-[2rem]">{lang === "KOR" ? "KR" : "EN"}</span>
             {isHover && (
               <div
-                className={`p-5 absolute bg-white rounded-2xl -bottom-[90px] right-0 border border-black text-[1.8rem] flex flex-col gap-3`}
+                className={`p-5 absolute bg-white rounded-2xl -bottom-[90px] right-0 border border-black text-[1.8rem] flex flex-col gap-3 z-10`}
                 onMouseLeave={() => setIsHover(false)}
               >
                 <span
@@ -75,7 +76,10 @@ export default function Header() {
           </div>
           {page === "/" ? (
             <div className="flex flex-col gap-[30px] ">
-              <div className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer">
+              <div
+                className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer"
+                onClick={() => toast.success("아직 미구현(WIP)")}
+              >
                 <span>Design</span>
                 <Image
                   className="relative -top-5 -right-5"
@@ -85,7 +89,10 @@ export default function Header() {
                   alt="arrow-icon1"
                 />
               </div>
-              <div className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer">
+              <div
+                className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer"
+                onClick={() => toast.warning("아직 미구현(WIP)")}
+              >
                 <span>Development</span>
                 <Image
                   className="relative -top-5 -right-5"
@@ -95,7 +102,10 @@ export default function Header() {
                   alt="arrow-icon2"
                 />
               </div>
-              <div className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer">
+              <div
+                className="text-[2rem] md:text-[3.2rem] font-bold flex cursor-pointer"
+                onClick={() => toast.error("아직 미구현(WIP)")}
+              >
                 <span>Digital Marketing</span>
                 <Image
                   className="relative -top-5 -right-5"

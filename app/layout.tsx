@@ -35,6 +35,7 @@ export default function RootLayout({
           <Header />
           {children}
         </LanguageProvider>
+        <div id="root" />
       </body>
     </html>
   );
